@@ -1,1 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap' rel='stylesheet'>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Ali Imtiaz - Web Developer</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .logo {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.3s ease;
+  }
+
+  .logo:hover {
+    color: #FF4500;
+    text-shadow: 0 0 10px #FF4500,
+      0 0 20px #FF4500;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: 0.3s ease;
+  }
+
+  .navbar a:hover,
+  .navbar a:active {
+    color: #FF4500;
+  }
+
+  .contact {
+    padding: 10px 20px;
+    background-color: #FF4500;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+
+  .contact:hover {
+    background-color: #000;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+    color: #FF4500;
+  }
+
+  .home {
+    width: 100%;
+    min-height: 100vh;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5%;
+  }
+
+  .home-content {
+    text-align: center;
+  }
+
+  .home-content h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .home-content h1 {
+    font-size: 48px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+  }
+
+  .home-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .btn-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btn-1,
+  .btn-2 {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 200px;
+  }
+
+  .btn-1 {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+  }
+
+  .btn-1:hover {
+    background-color: #FF4500;
+    color: #fff;
+    border-color: #FF4500;
+  }
+
+  .btn-2 {
+    background-color: #FF4500;
+    color: #fff;
+    border: 2px solid #000;
+  }
+
+  .btn-2:hover {
+    background-color: #000;
+    color: #FF4500;
+    border-color: #FF4500;
+  }
+
+  .img-box img {
+    border-radius: 50%;
+    width: 350px;
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12% 8%;
+    gap: 10em;
+    background-color: black;
+  }
+
+  .about-img img {
+    position: relative;
+    width: 350px;
+    box-shadow: 0 0 25px orangered,
+      0 0 50px orangered;
+    border-radius: 50%;
+  }
+
+  .about-content h2 {
+    text-align: left;
+    color: white;
+    font-size: 42px;
+  }
+
+  .about-content h3 {
+    font-size: 62px;
+    color: white;
+  }
+
+  .about-content p {
+    color: white;
+    font-size: 20px;
+    margin: 2em 0 3em;
+  }
+
+  .contact-form h2 {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 36px;
+  }
+
+  .contact-form form {
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+  }
+
+  .contact-form form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-form form .input-box input,
+  .contact-form form textarea {
+    width: 100%;
+    padding: 1.5em;
+    font-size: 18px;
+    color: black;
+    background: white;
+    margin: 1rem 0;
+    resize: none;
+  }
+
+  footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .social {
+    margin-bottom: 20px;
+  }
+
+  .social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  .list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .list li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .list li:last-child {
+    margin-right: 0;
+  }
+
+  .list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .list a:hover {
+    color: #FF4500;
+  }
+
+  .btn-1 {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+  }
+</style>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo"><span>Ali</span> Imtiaz</a>
+    <nav class="navbar">
+      <a href="#" class="active">Personal Portfolio</a>
+      <a href="#">Services</a>
+      <a href="#">Experience</a>
+      <a href="#">Projects</a>
+      <a href="#">Education</a>
+    </nav>
+    <a href="#" class="contact">Contact Me</a>
+  </header>
+
+  <section class="home">
+    <div class="home-content">
+      <h3>Hi</h3>
+      <h1>I'm <span>Ali</span>, a Frontend Developer</h1>
+      <p>I am a student of BS(CS) at FAST University Faisalabad.</p>
+    </div>
+    <div class="btn-box">
+      <button class="btn-1">Home</button>
+      <button class="btn-2">About Me</button>
+    </div>
+    <div class="img-box">
+      <img src="image1.jpeg" >
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-img">
+      <img src="image1.jpeg" >
+    </div>
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>Frontend <span>Developer</span></h3>
+      <p>
+        I am a Computer Science Student who thrives on challenging projects.Throughout my studies,I have actively
+        engaged in diverse collaborations and have independently created impactful semester projects.
+      </p>
+      <a href="#" class="btn-2">Experience</a>
+    </div>
+  </section>
+
+  <section class="contact-form">
+    <h2 class="contact-me">Contact <span>Me</span></h2>
+    <form action="#">
+      <div class="input-box">
+        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Email">
+      </div>
+      <div class="input-box">
+        <input type="number" placeholder="Phone Number">
+        <input type="text" placeholder="Subject">
+      </div>
+      <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message">
+    </form>
+  </section>
+
+  <footer>
+    <div class="social">
+      <a href="https://www.instagram.com/ali_imtiaz.13/">Instagram</a>
+      <a href="https://www.facebook.com/">Facebook</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+    <p class="copyright">All Rights Reserved by Ali Imtiaz</p>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+<script>
+  document.querySelector('.btn-1').addEventListener('click', function () {
+    const homeSection = document.querySelector('.home');
+    homeSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.querySelector('.btn-2').addEventListener('click', function () {
+    const aboutSection = document.querySelector('.about');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.querySelector('.contact').addEventListener('click', function (event) {
+    event.preventDefault();
+    const contactSection = document.querySelector('.contact-form');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+</script>
+
+</html>
